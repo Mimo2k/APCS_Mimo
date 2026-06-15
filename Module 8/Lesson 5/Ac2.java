@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Ac2 {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 2};
+        System.out.println(subsetsWithDup(nums));
+    }
+
+    public static List<List<Integer>> subsetsWithDup(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> result = new ArrayList<>();
+        generate(0, nums, new ArrayList<>(), result);
+        return result;
+    }
+
+    private static void generate(int index, int[] nums, List<Integer> current, List<List<Integer>> result) {
+        result.add(new ArrayList<>(current));
+        
+        for (int i = index; i < nums.length; i++) {
+            if (i > index && nums[i] == nums[i - 1]) continue;
+            
+            current.add(nums[i]);
+            generate(i + 1, nums, current, result);
+            current.remove(current.size() - 1);
+        }
+    }
+}
