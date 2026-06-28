@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dynamic Computations by Mimo</title>
+  </head>
+  <body>
+    
+    <fieldset>
+      <legend><strong>Performance Evaluation Portal</strong></legend>
+      <p>Welcome to this coding session. Mimo is demonstrating how to combine layout structures with the dynamic output element to calculate interactive mathematical aggregates natively.</p>
+
+      <form oninput="averageResult.value = (parseFloat(scoreA.value || 0) + parseFloat(scoreB.value || 0) + parseFloat(scoreC.value || 0)) / 3">
+        <label for="studentIdentifier">Candidate Name:</label><br>
+        <input type="text" id="studentIdentifier" name="studentIdentifier"><br><br>
+
+        <label>Academic Module Scores</label><br>
+        
+        <select id="topicA" name="topicA">
+          <option value="computing">Computer Science</option>
+          <option value="math">Advanced Mathematics</option>
+          <option value="physics">Physics</option>
+        </select>
+        <input type="number" id="scoreA" name="scoreA" value="0"><br><br>
+
+        <select id="topicB" name="topicB">
+          <option value="computing">Computer Science</option>
+          <option value="math">Advanced Mathematics</option>
+          <option value="physics">Physics</option>
+        </select>
+        <input type="number" id="scoreB" name="scoreB" value="0"><br><br>
+
+        <select id="topicC" name="topicC">
+          <option value="computing">Computer Science</option>
+          <option value="math">Advanced Mathematics</option>
+          <option value="physics">Physics</option>
+        </select>
+        <input type="number" id="scoreC" name="scoreC" value="0"><br><br>
+
+        <strong>Calculated Term Average:</strong> 
+        <output name="averageResult" for="scoreA scoreB scoreC">0</output>
+      </form>
+    </fieldset>
+
+    <h6>Lesson Note</h6>
+    <p>Constructed and verified by Mimo for Codingal students.</p>
+  </body>
+</html>
